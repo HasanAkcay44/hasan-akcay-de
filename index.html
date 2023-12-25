@@ -4,8 +4,56 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      #downloadpdfbtn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        z-index: 999;
+      }
+    </style>
   </head>
+  <!-- HTML-Inhalt -->
   <body class="bg-slate-900 px-20 py-10 text-white">
+    <div id="downloadpdfbtn" onclick="downloadPDF()">Als PDF herunterladen</div>
+
+    <script src="https://rawgit.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document
+          .getElementById("downloadpdfbtn")
+          .addEventListener("click", () => {
+            var options = {
+              margin: 0,
+              filename: "hasanakcay.pdf",
+              image: { type: "jpeg", quality: 100 },
+              html2canvas: { scale: 2 },
+              jsPDF: { unit: "mm", format: "a3", orientation: "landscape" },
+            };
+
+            var combinedElement = document.createElement("div");
+
+            function addToCombinedElement(elementId) {
+              combinedElement.appendChild(
+                document.getElementById(elementId).cloneNode(true)
+              );
+            }
+
+            addToCombinedElement("start");
+            addToCombinedElement("skills");
+            addToCombinedElement("cv");
+            addToCombinedElement("certifications");
+
+            html2pdf(combinedElement, options);
+          });
+      });
+    </script>
+
     <header class="text-3xl font-bold flex justify-center w-full">
       <nav class="bg-gray-800 p-4 rounded-lg">
         <a href="#start" class="hover:text-gray-500 px-10">Start</a>
@@ -346,15 +394,17 @@
           <div class="p-10 flex-1"></div>
         </div>
       </div>
-
-      <div id="certifications">
-        <!-- certifications -->
-        <h1 class="mt-10 text-3xl">Certifications</h1>
-        <div
-          class="mt-10 bg-slate-800 flex rounded-lg outline outline-1 outline-grey-50"
-        ></div>
+    </div>
+    <div id="certifications">
+      <!-- certifications -->
+      <h1 class="mt-10 text-3xl">Certifications</h1>
+      <div
+        class="mt-10 bg-slate-800 flex rounded-lg outline outline-1 outline-grey-50"
+      >
+        <p>soon</p>
       </div>
     </div>
+
     <footer class="flex justify-center mt-4">
       <a href="impressum.html" class="mr-4">Impressum</a>
       <a href="datenschutz.html">Datenschutzerklärung</a>
