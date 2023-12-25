@@ -7,9 +7,14 @@
 </head>
 <body class="bg-slate-900 px-20 py-10 text-white">
     <header class="text-3xl font-bold flex justify-center w-full">
-      <div class="px-10"><a href="index.html" class="mr-4">Home</a></div>
-      <div class="px-10"><a href="lebenslauf.html">Lebenslauf</a></div>
+      <nav class="bg-gray-800 p-4 rounded-lg">
+        <a href="#start" class="hover:text-gray-500 px-10">Start</a>
+        <a href="#skills" class="hover:text-gray-500 px-10">Skills</a>
+        <a href="#cv" class="hover:text-gray-500 px-10">CV</a>
+        <a href="#certifications" class="hover:text-gray-500 px-10">Certifications</a>
+    </nav>
     </header>
+    <div id="start"></div> <!-- start -->
   <div class="mt-8"></div>
   <div class="bg-slate-800 flex rounded-lg outline outline-1 outline-grey-50 ">
     <div class="w-4/12 flex items-center flex-col border-r border-neutral-600">
@@ -42,7 +47,10 @@
         </p>
     </div>
   </div>
-    <h2 class="mt-10 text-2xl">Skills</h2>
+</div>
+  <div id="skills"> <!-- Skills -->
+    <h2 class="mt-10 text-3xl">Skills</h2>
+    <div class="mt-7">
     <div class="flex gap-4"> <!-- 1.Progressbar Reihe-->
 
       <div class="p-4 bg-slate-800 w-full"> <!-- Progressbar Box-->
@@ -147,9 +155,133 @@
       </div>
     </div>
   </div>
+</div>
+</div>
+<div id="cv"> <!-- CV -->
+  <h1 class="mt-10 text-3xl">CV</h1>
+  <div class="mt-10 bg-slate-800 flex flex-row rounded-lg outline outline-1 outline-grey-50">
+    <div class="px-10 py-5 flex-1">
+    <section>
+      <h2 class="text-2xl text-center">BERUFLICHER WERDEGANG</h2>
+      <ul>
+        <li class="flex flex-row mt-4">
+          <div class="w-32">
+            <strong>01/2023 bis heute</strong><br>
+            
+          </div>
+          <div class="px-10">
+            SiteLog GmbH, Essen<br>
+            Informationstechnischer Assistent
+          </div>
+        </li>
+        <li class="flex flex-row mt-4">
+          <div class="w-32">
+            <strong>07/2022 bis 01/2023</strong><br>
+          </div>
+          <div class="px-10">
+            SiteLog GmbH, Essen<br>
+            Junior Softwareentwickler
+          </div>
+        </li>
+        <li class="flex flex-row mt-4">
+          <div class="w-32">
+            <strong>10/2021 bis 06/2022</strong><br>
+          </div>
+          <div class="px-10">
+            SiteLog GmbH, Essen<br>
+            Werkstudent als Softwareentwickler
+          </div>
+        </li>
+        <li class="flex flex-row mt-4">
+          <div class="w-32">
+            <strong>02/2021 bis 09/2022</strong><br>
+          </div>
+          <div class="px-10">SiteLog GmbH, Essen<br>
+            Werkstudent als Administrator</div>
+        </li>
+        <li class="flex flex-row mt-4">
+          <div class="w-32">
+            <strong>08/2017 bis 01/2021</strong><br>
+          </div>
+          <div class="px-10">
+            Powwow GmbH, Bochum<br>
+            Studentische Aushilfe im Kundenservice
+          </div>
+        </li>
+        <li class="flex flex-row mt-4">
+          <div class="w-32">
+            <strong>06/2014 bis 08/2014</strong><br>
+          </div>
+          <div class="px-10">
+            rku.it GmbH, Herne<br>
+            Praktikum als Fachinformatiker - Systemintegration
+          </div>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <div class="p-2" style="border-right: 1px solid #ccc;"></div> <!-- Hier wird der Strich eingefügt -->
+
+  <div class="px-10 py-5 flex-1">
+    <section>
+      <h2 class="text-2xl text-center">BILDUNGSWEG</h2>
+      <ul>
+        <li class="flex flex-row mt-4">
+          <div class="w-32">
+            <strong>09/2015 bis heute</strong><br>
+          </div>
+          <div class="px-10">
+            Fachhochschule Dortmund<br>
+            Praktische Informatik
+            </div>
+        </li>
+        <li class="flex flex-row mt-4">
+          <div class="w-32">
+            <strong>08/2012 bis 05/2015</strong><br>
+          </div>
+          <div class="px-10">
+            Technische Berufliche Schule 1, Bochum<br>
+            Staatlich geprüfter informationstechnischer Assistent<br>
+            + Fachhochschulreife
+            </div>
+        </li>
+        <li class="flex flex-row mt-4">
+          <div class="w-32">
+            <strong>08/2006 bis 04/2012</strong><br>
+          </div>
+          <div class="px-10">
+            Erich Kästner Gesamtschule, Bochum<br>
+            Fachoberschulreife
+            </div>
+        </li>
+      </ul>
+    </section>
+    <div class="p-10 flex-1">
+  </div>
+  </div>
+</div>
+
+<div id="certifications"></div> <!-- certifications -->
+<h1 class="mt-10 text-2xl">Certifications</h1>
+<div class="mt-10 bg-slate-800 flex rounded-lg outline outline-1 outline-grey-50">
+
+</div>
+</div>
     <footer class="flex justify-center mt-4">
       <a href="impressum.html" class="mr-4">Impressum</a>
       <a href="datenschutz.html">Datenschutzerklärung</a>
     </footer>
+    <script>
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+              e.preventDefault();
+  
+              document.querySelector(this.getAttribute('href')).scrollIntoView({
+                  behavior: 'smooth'
+              });
+          });
+      });
+  </script>
   </body>
 </html>
