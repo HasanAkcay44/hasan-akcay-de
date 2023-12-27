@@ -4,22 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      #downloadpdfbtn {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        background-color: #007bff;
-        color: #fff;
-        border-radius: 5px;
-        padding: 10px 20px;
-        cursor: pointer;
-        z-index: 999;
-      }
-    </style>
   </head>
-  <body class="bg-slate-900 px-20 py-10 text-white">
-    <div id="downloadpdfbtn" onclick="downloadPDF()">Als PDF herunterladen</div>
+
+  <body class="bg-slate-900 px-20 py-5 text-white">
+    <div class="flex flex-row">
+      <header class="text-3xl font-bold flex justify-center w-full">
+        <nav class="bg-gray-800 p-4 rounded-lg flex flex-row content-center">
+          <a href="#start" class="hover:text-gray-500 px-10">Start</a>
+          <a href="#skills" class="hover:text-gray-500 px-10">Skills</a>
+          <a href="#cv" class="hover:text-gray-500 px-10">CV</a>
+          <a href="#certifications" class="hover:text-gray-500 px-10"
+            >Certifications</a
+          >
+          <div
+            class="text-base p-2 bg-blue-500 rounded-md cursor-pointer hover:text-gray-300"
+            id="downloadpdfbtn"
+            onclick="downloadPDF()"
+          >
+            Als PDF herunterladen
+          </div>
+        </nav>
+      </header>
+    </div>
 
     <script src="https://rawgit.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
     <script>
@@ -53,16 +59,6 @@
       });
     </script>
 
-    <header class="text-3xl font-bold flex justify-center w-full">
-      <nav class="bg-gray-800 p-4 rounded-lg">
-        <a href="#start" class="hover:text-gray-500 px-10">Start</a>
-        <a href="#skills" class="hover:text-gray-500 px-10">Skills</a>
-        <a href="#cv" class="hover:text-gray-500 px-10">CV</a>
-        <a href="#certifications" class="hover:text-gray-500 px-10"
-          >Certifications</a
-        >
-      </nav>
-    </header>
     <div id="start">
       <!-- start -->
       <div class="mt-8"></div>
