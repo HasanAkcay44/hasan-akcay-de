@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-      #popupContent img {
+      .popup-content img {
         max-width: 100%;
         max-height: 80%;
         object-fit: contain; /* oder object-fit: cover; je nach Bedarf */
@@ -401,6 +401,8 @@
     <div class="flex flex-col" id="certifications">
       <!-- certifications -->
       <h1 class="mt-10 text-3xl">Certifications</h1>
+
+      <!-- Erste Zertifizierung -->
       <div class="flex items-center justify-center mt-7">
         <div class="w-full">
           <div
@@ -411,8 +413,7 @@
             </div>
             <img
               class="w-1/4 p-4 mx-auto cursor-pointer"
-              id="popupImage"
-              onclick="showImagePopup('./certifications/AbsDevOpsGrundkurs.jpg')"
+              onclick="showImagePopup('./certifications/AbsDevOpsGrundkurs.jpg', 'imagePopup')"
               src="./certifications/AbsDevOpsGrundkurs.jpg"
               alt="Abschlussbescheinigung - DevOps - der essentielle Grundkurs"
             />
@@ -420,9 +421,9 @@
         </div>
       </div>
 
-      <!-- Popup für das größere Bild -->
+      <!-- Popup für das größere Bild - Erste Zertifizierung -->
       <div
-        class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-black bg-opacity-70 flex justify-center items-center hidden"
+        class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-black bg-opacity-70 flex justify-center items-center hidden popup-content"
         id="imagePopup"
       >
         <div
@@ -438,27 +439,86 @@
         <div
           class="absolute top-10 right-10 cursor-pointer text-red-600 text-5xl"
           id="closeButton"
-          onclick="closeImagePopup()"
+          onclick="closeImagePopup('imagePopup')"
         >
           &times;
         </div>
       </div>
+
+      <!-- Zweite Zertifizierung -->
+      <div class="flex items-center justify-center mt-7">
+        <div class="w-full">
+          <div
+            class="mt-4 bg-slate-800 flex flex-col w-full rounded-lg outline outline-1 outline-grey-50"
+          >
+            <div class="mt-2 text-center text-2xl underline">
+              Abschlussbescheinigung - Spring Boot Webentwicklung - RESTful API
+              entwickeln mit Java
+            </div>
+            <img
+              class="w-1/4 p-4 mx-auto cursor-pointer"
+              onclick="showImagePopup('./certifications/AbsSpringBootRESTfulAPI.jpg', 'imagePopup2')"
+              src="./certifications/AbsSpringBootRESTfulAPI.jpg"
+              alt="Abschlussbescheinigung - Spring Boot Webentwicklung - RESTful API entwickeln mit Java"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Popup für das größere Bild - Zweite Zertifizierung -->
+      <div
+        class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-black bg-opacity-70 flex justify-center items-center hidden popup-content"
+        id="imagePopup2"
+      >
+        <div
+          class="w-full h-full bg-black bg-opacity-70 flex justify-center items-center"
+          id="popupContent2"
+        >
+          <img
+            src="./certifications/AbsSpringBootRESTfulAPI.jpg"
+            alt="Großes Bild"
+            id="popupImage2"
+          />
+        </div>
+        <div
+          class="absolute top-10 right-10 cursor-pointer text-red-600 text-5xl"
+          id="closeButton2"
+          onclick="closeImagePopup('imagePopup2')"
+        >
+          &times;
+        </div>
+      </div>
+
+      <div class="mt-10">
+        <div class="border-b"></div>
+        <div class="text-xl p-2 text-center">
+          Ich habe diese Homepage mit Leidenschaft selbst gestaltet und
+          entwickelt. Das Design basiert auf dem effizienten CSS-Framework
+          Tailwind, während die dynamischen Elemente durch die Einbindung von
+          JavaScript entstanden sind. Es war mir eine Freude, dieses Projekt zu
+          realisieren und ich hoffe, dass Ihnen das Ergebnis gefällt. Vielen
+          Dank für Ihren Besuch und viel Spaß beim Erkunden der Webseite!
+        </div>
+      </div>
+      <div class="border-b"></div>
+
+      <script>
+        function showImagePopup(imageUrl, popupId) {
+          // Das Popup einblenden
+          document.getElementById(popupId).style.display = "flex";
+
+          // Das Bild im Popup setzen
+          document.getElementById(
+            "popupImage" + popupId.charAt(popupId.length - 1)
+          ).src = imageUrl;
+        }
+
+        function closeImagePopup(popupId) {
+          // Das Popup ausblenden
+          document.getElementById(popupId).style.display = "none";
+        }
+      </script>
     </div>
-
-    <script>
-      function showImagePopup(imageUrl) {
-        // Das Popup einblenden
-        document.getElementById("imagePopup").style.display = "flex";
-
-        // Das Bild im Popup setzen
-        document.getElementById("popupImage").src = imageUrl;
-      }
-
-      function closeImagePopup() {
-        // Das Popup ausblenden
-        document.getElementById("imagePopup").style.display = "none";
-      }
-    </script>
 
     <footer class="flex justify-center mt-4">
       <a href="impressum.html" class="mr-4">Impressum</a>
