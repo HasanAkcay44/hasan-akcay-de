@@ -2,29 +2,45 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       .popup-content img {
         max-width: 100%;
         max-height: 80%;
-        object-fit: contain; /* oder object-fit: cover; je nach Bedarf */
+        object-fit: contain;
       }
     </style>
   </head>
 
-  <body class="bg-slate-900 px-20 py-5 text-white">
-    <div class="flex flex-row">
+  <body
+    class="bg-slate-900 px-4 sm:px-20 py-5 text-white flex flex-col"
+    style="min-width: 100%"
+  >
+    <div class="flex flex-col">
       <header class="text-3xl font-bold flex justify-center w-full">
-        <nav class="bg-gray-800 p-4 rounded-lg flex flex-row content-center">
-          <a href="#start" class="hover:text-gray-500 px-10">Start</a>
-          <a href="#skills" class="hover:text-gray-500 px-10">Skills</a>
-          <a href="#cv" class="hover:text-gray-500 px-10">CV</a>
-          <a href="#certifications" class="hover:text-gray-500 px-10"
+        <nav class="bg-gray-800 p-4 rounded-lg flex flex-wrap content-center">
+          <a href="#start" class="hover:text-gray-500 px-2 sm:px-4 py-2 sm:py-0"
+            >Start</a
+          >
+          <a
+            href="#skills"
+            class="hover:text-gray-500 px-2 sm:px-4 py-2 sm:py-0"
+            >Skills</a
+          >
+          <a href="#cv" class="hover:text-gray-500 px-2 sm:px-4 py-2 sm:py-0"
+            >CV</a
+          >
+          <a
+            href="#certifications"
+            class="hover:text-gray-500 px-2 sm:px-4 py-2 sm:py-0"
             >Certifications</a
           >
           <div
-            class="text-base p-2 bg-blue-500 rounded-md cursor-pointer hover:text-gray-300"
+            class="text-base p-2 bg-blue-500 rounded-md cursor-pointer hover:text-gray-300 mt-2 sm:mt-0"
             id="downloadpdfbtn"
             onclick="downloadPDF()"
           >
@@ -68,48 +84,49 @@
 
     <div id="start">
       <!-- start -->
-      <div class="mt-8"></div>
+      <div class="mt-8 flex justify-center"></div>
       <div
-        class="bg-slate-800 flex rounded-lg outline outline-1 outline-grey-50"
+        class="bg-slate-800 flex flex-col rounded-lg outline outline-1 outline-grey-50"
       >
-        <div
-          class="w-4/12 flex items-center flex-col border-r border-neutral-600"
-        >
+        <div class="flex flex-col items-center">
           <img
-            class="w-6/12 mt-2 p-4 rounded-full"
+            class="w-4/12 md:w-2/12 mt-2 p-4 rounded-full"
             src="./img/foto_Hasan.JPG"
             alt="Hasan Akcay"
           />
-          <div class="bg-slate-900 w-full px-8 py-4">
-            <div class="flex justify-center text-3xl">Hasan Akcay</div>
-            <div class="flex justify-center font-medium text-yellow-400">
-              Softwareentwickler
+          <div
+            class="w-full flex items-center flex-col border-r border-neutral-600"
+            id="Steckbrief"
+          >
+            <div class="bg-slate-900 w-full px-8 py-4 text-center">
+              <div class="text-3xl">Hasan Akcay</div>
+              <div class="font-medium text-yellow-400">Softwareentwickler</div>
+              <div class="gap-3 mt-3 flex justify-center">
+                <a href="https://github.com/HasanAkcay44" target="_blank"
+                  ><img class="invert w-8" src="./icon/github_icon.png"
+                /></a>
+                <a
+                  href="https://www.linkedin.com/in/hasan-akcay-9345b3180"
+                  target="_blank"
+                  ><img class="invert w-8" src="./icon/linkedin_icon.png"
+                /></a>
+              </div>
             </div>
-            <div class="flex justify-center gap-3 mt-3">
-              <a href="https://github.com/HasanAkcay44" target="_blank"
-                ><img class="invert w-8" src="./icon/github_icon.png"
-              /></a>
-              <a
-                href="https://www.linkedin.com/in/hasan-akcay-9345b3180"
-                target="_blank"
-                ><img class="invert w-8" src="./icon/linkedin_icon.png"
-              /></a>
-            </div>
-          </div>
-          <div class="w-full px-8 py-4">
-            <div class="flex py-2 justify-between border-b">
-              Alter: <span class="text-neutral-400">27</span>
-            </div>
-            <div class="flex py-2 justify-between border-b">
-              City: <span class="text-neutral-400">Bochum, Germany</span>
-            </div>
-            <div class="flex py-2 justify-between border-b">
-              Favorite Languages:
-              <span class="text-neutral-400">Java, Ruby</span>
+            <div class="w-full px-8 py-4">
+              <div class="flex py-2 justify-between border-b">
+                Alter: <span class="text-neutral-400">27</span>
+              </div>
+              <div class="flex py-2 justify-between border-b">
+                City: <span class="text-neutral-400">Bochum, Germany</span>
+              </div>
+              <div class="flex py-2 justify-between border-b">
+                Favorite Languages:
+                <span class="text-neutral-400">Java, Ruby</span>
+              </div>
             </div>
           </div>
         </div>
-        <div class="w-8/12 p-4">
+        <div class="w-full p-4" id="Text">
           <h1 class="text-3xl">Herzlich willkommen</h1>
           <p class="mt-4">
             In meiner aktuellen Position als Informationstechnischer Assistent
@@ -296,9 +313,9 @@
       <!-- CV -->
       <h1 class="mt-10 text-3xl">CV</h1>
       <div
-        class="mt-10 bg-slate-800 flex flex-row rounded-lg outline outline-1 outline-grey-50"
+        class="mt-10 bg-slate-800 flex-col flex rounded-lg outline outline-1 outline-grey-50"
       >
-        <div class="px-10 py-5 flex-1">
+        <div class="px-10 py-5 flex-1" style="max-width: 100%">
           <section>
             <h2 class="text-2xl text-center">BERUFLICHER WERDEGANG</h2>
             <ul>
@@ -358,10 +375,10 @@
           </section>
         </div>
 
-        <div class="p-2" style="border-right: 1px solid #ccc"></div>
         <!-- Hier wird der Strich eingefügt -->
+        <div class="border-t border-gray-300"></div>
 
-        <div class="px-10 py-5 flex-1">
+        <div class="px-10 py-5">
           <section>
             <h2 class="text-2xl text-center">BILDUNGSWEG</h2>
             <ul>
@@ -393,7 +410,7 @@
               </li>
             </ul>
           </section>
-          <div class="p-10 flex-1"></div>
+          <div class="p-2 flex-1"></div>
         </div>
       </div>
     </div>
