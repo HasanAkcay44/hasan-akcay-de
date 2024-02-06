@@ -506,6 +506,49 @@
         </div>
       </div>
 
+      <!-- Dritte Zertifizierung -->
+      <div class="flex items-center justify-center mt-7">
+        <div class="w-full">
+          <div
+            class="mt-4 bg-slate-800 flex flex-col w-full rounded-lg outline outline-1 outline-grey-50"
+          >
+            <div class="mt-2 text-center text-2xl underline">
+              Fortinet Certified Fundamentals in Cybersecurity
+            </div>
+            <img
+              class="w-1/4 p-4 mx-auto cursor-pointer"
+              onclick="showImagePopup('./certifications/FCF.PNG', 'imagePopup3')"
+              src="./certifications/FCF.PNG"
+              alt="Abschlussbescheinigung - Spring Boot Webentwicklung - RESTful API entwickeln mit Java"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Popup für das größere Bild - Zweite Zertifizierung -->
+      <div
+        class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-black bg-opacity-70 flex justify-center items-center hidden popup-content"
+        id="imagePopup3"
+      >
+        <div
+          class="w-full h-full bg-black bg-opacity-70 flex justify-center items-center"
+          id="popupContent3"
+        >
+          <img
+            src="./certifications/FCF.PNG"
+            alt="Großes Bild"
+            id="popupImage3"
+          />
+        </div>
+        <div
+          class="absolute top-10 right-10 cursor-pointer text-red-600 text-5xl"
+          id="closeButton3"
+          onclick="closeImagePopup('imagePopup3')"
+        >
+          &times;
+        </div>
+      </div>
+
     <div class="mt-10">
       <div class="border-b"></div>
       <div class="text-xl p-2 text-center">
